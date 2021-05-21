@@ -1,0 +1,80 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 13px; }
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ecf2f8; }
+
+.text-thin {
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: .1px;
+  opacity: 50%; }
+
+.card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 5px; }
+  .card > .user, .card > .user-review {
+    margin-bottom: 1.5rem; }
+  .card .user-note {
+    line-height: 1.4;
+    opacity: 70%; }
+  .card:first-child > img.quotation {
+    position: absolute;
+    top: 0;
+    right: 15.5%;
+    z-index: -1; }
+  .card:first-child {
+    z-index: -2; }
+
+.user {
+  display: flex;
+  align-items: center; }
+  .user img {
+    border-radius: 50%;
+    width: 30px; }
+  .user .user-info {
+    margin: 0 1rem; }
+
+.container {
+  width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding: 1rem; }
+
+.container .card:first-child {
+  grid-column: 1 / span 2;
+  background-color: #7541c8;
+  color: #ecf2f8; }
+
+.container .card:nth-child(2) {
+  background-color: #48556a;
+  color: #ecf2f8; }
+
+.container .card:nth-child(3) {
+  grid-row: 2;
+  background-color: white;
+  color: #19212e; }
+
+.container .card:nth-child(4) {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  background-color: #19212e;
+  color: #ecf2f8; }
+
+.container .card:last-child {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  background-color: white;
+  color: #19212e; }

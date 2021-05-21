@@ -1,0 +1,106 @@
+@import 'variables';
+@import 'functions';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: 'Barlow Semi Condensed', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $light-grayish-blue;
+}
+
+.text-thin {
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: .1px;
+  opacity: 50%;
+}
+
+.card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 5px;
+
+  & > .user, & > .user-review {
+    margin-bottom: 1.5rem;
+  }
+
+  .user-note {
+    line-height: 1.4;
+    opacity: 70%;
+  }
+
+  &:first-child > img.quotation {
+    position: absolute;
+    top: 0;
+    right: 15.5%;
+    z-index: -1;
+  }
+
+  &:first-child {
+    z-index: -2;
+  }
+}
+
+.user {
+  display: flex;
+  align-items: center;
+  img {
+    border-radius: 50%;
+    width: 30px;
+  }
+  .user-info {
+    margin: 0 1rem;
+  }
+}
+
+.container {
+  width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 2rem;
+  padding: 1rem;
+}
+
+.container .card:first-child {
+  grid-column: 1 / span 2;
+  background-color: $moderate-violet;
+  color: set-text-color($moderate-violet);
+}
+
+.container .card:nth-child(2) {
+  background-color: $dark-grayish-blue;
+  color: set-text-color($dark-grayish-blue);
+}
+
+.container .card:nth-child(3) {
+  grid-row: 2;
+  background-color: $white;
+  color: set-text-color($white);
+}
+
+.container .card:nth-child(4) {
+  grid-column: 2 / span 2;
+  grid-row: 2;
+  background-color: $dark-blackish-blue;
+  color: set-text-color($dark-blackish-blue);
+}
+
+.container .card:last-child {
+  grid-column: 4;
+  grid-row: 1 / span 2;
+  background-color: $white;
+  color: set-text-color($white);
+}
+

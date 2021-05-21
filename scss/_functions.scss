@@ -1,0 +1,7 @@
+@function set-text-color($bg-color) {
+  @if(lightness($bg-color) > 80) {
+    @return $dark-blackish-blue;
+  } @else {
+    @return $light-grayish-blue;
+  }
+}

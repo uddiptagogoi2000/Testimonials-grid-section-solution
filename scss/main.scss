@@ -8,7 +8,7 @@
 }
 
 html {
-  font-size: 13px;
+  font-size: 10px;
 }
 
 body {
@@ -32,6 +32,10 @@ body {
   padding: 2rem;
   border-radius: 5px;
 
+  .user-review {
+    font-family: 13px;
+  }
+
   & > .user, & > .user-review {
     margin-bottom: 1.5rem;
   }
@@ -51,6 +55,15 @@ body {
   &:first-child {
     z-index: -2;
   }
+
+  &:nth-child(4) .user > img {
+    border: 2px solid $moderate-violet;
+  }
+
+  &:first-child .user > img {
+    border: 2px solid;
+    border-color: transparentize($color: $white, $amount: 0.7);
+  }
 }
 
 .user {
@@ -63,14 +76,15 @@ body {
   .user-info {
     margin: 0 1rem;
   }
-}
+} 
 
 .container {
-  width: 1100px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
   padding: 1rem;
+  margin: 4rem 2rem;
 }
 
 .container .card:first-child {
@@ -88,6 +102,10 @@ body {
   grid-row: 2;
   background-color: $white;
   color: set-text-color($white);
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
+  & .user-review {
+    padding-right: 2rem;
+  }
 }
 
 .container .card:nth-child(4) {
@@ -102,5 +120,48 @@ body {
   grid-row: 1 / span 2;
   background-color: $white;
   color: set-text-color($white);
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2);
 }
 
+// *Tablets
+@media (max-width: 768px) {
+  body {
+    height: auto;
+  }
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .container .card:last-child {
+    grid-column: 1 / span 3;
+    grid-row: 3;
+  }
+}
+
+// *Smartphones
+@media (max-width: 540px) {
+  html {
+    font-size: 13px;
+  }
+  body {
+    height: auto;
+  }
+  .container {
+    margin: 4rem 2rem;
+    grid-template-columns: 1fr;
+    & .card:first-child {
+      grid-column: 1;
+    }
+    & .card:nth-child(3) {
+      grid-row: 3;
+    }
+    & .card:nth-child(4) {
+      grid-column: 1;
+      grid-row: 4;
+    }
+    & .card:last-child {
+      grid-column: 1;
+      grid-row: 5;
+    }
+  }
+}

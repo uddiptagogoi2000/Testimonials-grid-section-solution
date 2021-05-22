@@ -4,7 +4,7 @@
   box-sizing: border-box; }
 
 html {
-  font-size: 13px; }
+  font-size: 10px; }
 
 body {
   font-family: 'Barlow Semi Condensed', sans-serif;
@@ -24,6 +24,8 @@ body {
   position: relative;
   padding: 2rem;
   border-radius: 5px; }
+  .card .user-review {
+    font-family: 13px; }
   .card > .user, .card > .user-review {
     margin-bottom: 1.5rem; }
   .card .user-note {
@@ -36,6 +38,11 @@ body {
     z-index: -1; }
   .card:first-child {
     z-index: -2; }
+  .card:nth-child(4) .user > img {
+    border: 2px solid #7541c8; }
+  .card:first-child .user > img {
+    border: 2px solid;
+    border-color: rgba(255, 255, 255, 0.3); }
 
 .user {
   display: flex;
@@ -47,11 +54,12 @@ body {
     margin: 0 1rem; }
 
 .container {
-  width: 1100px;
+  max-width: 900px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 2rem;
-  padding: 1rem; }
+  padding: 1rem;
+  margin: 4rem 2rem; }
 
 .container .card:first-child {
   grid-column: 1 / span 2;
@@ -65,7 +73,10 @@ body {
 .container .card:nth-child(3) {
   grid-row: 2;
   background-color: white;
-  color: #19212e; }
+  color: #48556a;
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2); }
+  .container .card:nth-child(3) .user-review {
+    padding-right: 2rem; }
 
 .container .card:nth-child(4) {
   grid-column: 2 / span 2;
@@ -77,4 +88,33 @@ body {
   grid-column: 4;
   grid-row: 1 / span 2;
   background-color: white;
-  color: #19212e; }
+  color: #48556a;
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.2); }
+
+@media (max-width: 768px) {
+  body {
+    height: auto; }
+  .container {
+    grid-template-columns: repeat(3, 1fr); }
+  .container .card:last-child {
+    grid-column: 1 / span 3;
+    grid-row: 3; } }
+
+@media (max-width: 540px) {
+  html {
+    font-size: 13px; }
+  body {
+    height: auto; }
+  .container {
+    margin: 4rem 2rem;
+    grid-template-columns: 1fr; }
+    .container .card:first-child {
+      grid-column: 1; }
+    .container .card:nth-child(3) {
+      grid-row: 3; }
+    .container .card:nth-child(4) {
+      grid-column: 1;
+      grid-row: 4; }
+    .container .card:last-child {
+      grid-column: 1;
+      grid-row: 5; } }
